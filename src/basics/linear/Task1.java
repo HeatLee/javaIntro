@@ -5,18 +5,18 @@ import util.Input;
 
 public class Task1 {
 
-    private static Input input = new Input();
-    private static Printer printer = new Printer();
+    private static final Input input = new Input();
+    private static final Printer printer = new Printer();
 
     public static void main(String[] args) {
-        printer.print("Enter a: ");
-        double a = input.inputInt();
-        printer.print("Enter b: ");
-        double b = input.inputInt();
-        printer.print("Enter c: ");
-        double c = input.inputInt();
-        printer.print("Calculating z = ((a - 3) * b / 2) + c");
-        double z = ((a - 3) * b / 2) + c;
-        printer.print("z = " + z);
+        double a = input.inputInt("Enter a: ");
+        double b = input.inputInt("Enter b: ");
+        double c = input.inputInt("Enter c: ");
+        printer.print("Calculating z = ((a - 3) * b / 2) + c = ");
+        printer.print("" + calculate(a, b, c));
+    }
+
+    private static double calculate(double a, double b, double c) {
+        return  ((a - 3) * b / 2) + c;
     }
 }
