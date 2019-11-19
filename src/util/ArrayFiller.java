@@ -6,10 +6,42 @@ import java.util.Scanner;
 
 public class ArrayFiller {
 
-    public int[] fillArrayByInt(int size, int randomBound) {
+    public int[][] fillArrayByInt(int column, int row) {
+        int[][] array = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            array[i] = fillArrayByInt(column);
+        }
+        return array;
+    }
+
+    public int[][] fillArrayByIntRandomly(int column, int row, int randomBound) {
+        int[][] array = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            array[i] = fillArrayByIntRandomly(column, randomBound);
+        }
+        return array;
+    }
+
+    public double[][] fillArrayByDouble(int column, int row) {
+        double[][] array = new double[row][column];
+        for (int i = 0; i < row; i++) {
+            array[i] = fillArrayByDouble(column);
+        }
+        return array;
+    }
+
+    public double[][] fillArrayByDoubleRandomly(int column, int row, int randomBound) {
+        double[][] array = new double[row][column];
+        for (int i = 0; i < row; i++) {
+            array[i] = fillArrayByDoubleRandomly(column, randomBound);
+        }
+        return array;
+    }
+
+    public int[] fillArrayByInt(int size) {
         int[] array = new int[size];
         for (int i =0; i < size; i++) {
-            array[i] = new Scanner(System.in).nextInt(randomBound);
+            array[i] = new Scanner(System.in).nextInt();
         }
         return array;
     }
