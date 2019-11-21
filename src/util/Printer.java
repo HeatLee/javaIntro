@@ -14,14 +14,14 @@ public class Printer {
 
     public void printArray(double[] array) {
         for (int i = 0; i < array.length; i++ ) {
-            System.out.print(array[i] + " ");
+            System.out.print(String.format("%8.2f ", array[i]));
         }
     }
 
     public void printArray(double[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+                System.out.print(String.format("%8.2f ", array[i][j]));
             }
             System.out.print("\n");
         }
@@ -30,7 +30,7 @@ public class Printer {
     public void printArray(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+                System.out.print(String.format("%4d", array[i][j]));
             }
             System.out.print("\n");
         }

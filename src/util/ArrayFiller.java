@@ -6,6 +6,14 @@ import java.util.Scanner;
 
 public class ArrayFiller {
 
+    public int[] fillArrayByInt(int size) {
+        int[] array = new int[size];
+        for (int i =0; i < size; i++) {
+            array[i] = new Scanner(System.in).nextInt();
+        }
+        return array;
+    }
+
     public int[][] fillArrayByInt(int column, int row) {
         int[][] array = new int[row][column];
         for (int i = 0; i < row; i++) {
@@ -14,34 +22,10 @@ public class ArrayFiller {
         return array;
     }
 
-    public int[][] fillArrayByIntRandomly(int column, int row, int randomBound) {
-        int[][] array = new int[row][column];
-        for (int i = 0; i < row; i++) {
-            array[i] = fillArrayByIntRandomly(column, randomBound);
-        }
-        return array;
-    }
-
-    public double[][] fillArrayByDouble(int column, int row) {
-        double[][] array = new double[row][column];
-        for (int i = 0; i < row; i++) {
-            array[i] = fillArrayByDouble(column);
-        }
-        return array;
-    }
-
-    public double[][] fillArrayByDoubleRandomly(int column, int row, int randomBound) {
-        double[][] array = new double[row][column];
-        for (int i = 0; i < row; i++) {
-            array[i] = fillArrayByDoubleRandomly(column, randomBound);
-        }
-        return array;
-    }
-
-    public int[] fillArrayByInt(int size) {
+    public int[] fillArrayByIntRandomly(int size, int[] randomBounds) {
         int[] array = new int[size];
         for (int i =0; i < size; i++) {
-            array[i] = new Scanner(System.in).nextInt();
+            array[i] = new Random().nextInt((randomBounds[1] - randomBounds[0])+ 1)+ randomBounds[0];
         }
         return array;
     }
@@ -54,10 +38,34 @@ public class ArrayFiller {
         return array;
     }
 
+    public int[][] fillArrayByIntRandomly(int column, int row, int randomBound) {
+        int[][] array = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            array[i] = fillArrayByIntRandomly(column, randomBound);
+        }
+        return array;
+    }
+
+    public int[][] fillArrayByIntRandomly(int column, int row, int[] randomBounds) {
+        int[][] array = new int[row][column];
+        for (int i = 0; i < row; i++) {
+            array[i] = fillArrayByIntRandomly(column, randomBounds);
+        }
+        return array;
+    }
+
     public double[] fillArrayByDouble(int size) {
         double[] array = new double[size];
         for (int i = 0; i < size; i++) {
             array[i] = new Scanner(System.in).nextDouble();
+        }
+        return array;
+    }
+
+    public double[][] fillArrayByDouble(int column, int row) {
+        double[][] array = new double[row][column];
+        for (int i = 0; i < row; i++) {
+            array[i] = fillArrayByDouble(column);
         }
         return array;
     }
@@ -67,6 +75,32 @@ public class ArrayFiller {
         Random random = new Random();
         for (int i = 0; i < size; i++) {
             array[i] = (double)Math.round((random.nextInt(randomMaxBound) + random.nextDouble()) * 100d) / 100d;
+        }
+        return array;
+    }
+
+    public double[] fillArrayByDoubleRandomly(int size, int[]randomBounds) {
+        double[] array = new double[size];
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            array[i] = (double) Math.round((random.nextInt((randomBounds[1] - randomBounds[0]) + 1)
+                    + randomBounds[0] + random.nextDouble()) * 100d) / 100d;
+        }
+        return array;
+    }
+
+    public double[][] fillArrayByDoubleRandomly(int column, int row, int randomBound) {
+        double[][] array = new double[row][column];
+        for (int i = 0; i < row; i++) {
+            array[i] = fillArrayByDoubleRandomly(column, randomBound);
+        }
+        return array;
+    }
+
+    public double[][] fillArrayByDoubleRandomly(int column, int row, int[] randomBounds) {
+        double[][] array = new double[row][column];
+        for (int i = 0; i < row; i++) {
+            array[i] = fillArrayByDoubleRandomly(column, randomBounds);
         }
         return array;
     }
