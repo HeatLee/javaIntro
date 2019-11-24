@@ -1,6 +1,6 @@
 package util;
 
-public class Sorter {
+public class BubbleSorter {
 
     public void sortBubbleAsc(int[] array) {
         boolean isSorted = false;

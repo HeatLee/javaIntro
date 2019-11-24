@@ -6,6 +6,22 @@ public class Printer {
         System.out.print(text);
     }
 
+    public void printFraction(int numerator, int denominator) {
+        System.out.print(String.format("%d/%d  ", numerator, denominator));
+    }
+
+    public void printFractions(int[] numerators, int[] denominators) {
+        for (int i = 0; i < numerators.length; i++) {
+            printFraction(numerators[i], denominators[i]);
+        }
+    }
+
+    public void printFractions(int[] numerators, int commonDenominator) {
+        for (int i = 0; i < numerators.length; i++) {
+            printFraction(numerators[i], commonDenominator);
+        }
+    }
+
     public void printArray(int[] array) {
         for (int el : array) {
             System.out.print(el + " ");

@@ -3,13 +3,13 @@ package algorithms.multi_dimentional_arrays;
 import util.ArrayFiller;
 import util.Input;
 import util.Printer;
-import util.Sorter;
+import util.BubbleSorter;
 
 public class Task12 {
     private static Printer printer = new Printer();
     private static Input input = new Input();
     private static ArrayFiller filler = new ArrayFiller();
-    private static Sorter sorter = new Sorter();
+    private static BubbleSorter bubbleSorter = new BubbleSorter();
 
     private static final int RANDOM_MIN_BOUND = -10;
     private static final int RANDOM_MAX_BOUND  = 10;
@@ -30,13 +30,13 @@ public class Task12 {
 
     private static void sortRowsAscending(int[][] matrix) {
         for (int[] row : matrix) {
-            sorter.sortBubbleAsc(row);
+            bubbleSorter.sortBubbleAsc(row);
         }
     }
 
     private static void sortRowsDescending(int[][] matrix) {
         for (int[] row : matrix) {
-            sorter.sortBubbleDes(row);
+            bubbleSorter.sortBubbleDes(row);
         }
     }
 }
